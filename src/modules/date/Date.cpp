@@ -3,12 +3,17 @@
 #include <chrono>
 #include <ctime>
 #include <iomanip>
+#include <cstdlib>
+#include <time.h>
+
 
 #include "../../common/FormatHelper.h"
 #include "data/MonthNames.h"
 #include "data/WeekdayNames.h"
 #include "faker-cxx/Helper.h"
 #include "faker-cxx/Number.h"
+
+int srand(time(NULL));
 
 namespace faker
 {
@@ -149,5 +154,49 @@ std::string Date::monthAbbreviatedName()
 {
     return Helper::arrayElement<std::string>(monthAbbreviatedNames);
 }
+
+unsigned int Date::year(int minYear, int maxYear) {
+    int yearRange = (rand() % (maxYear-minYear)) + 1;
+    return yearRange;
+}
+
+unsigned int Date::month() {
+    unsigned int randomMonth = (rand() % 12) + 1;
+    return randomMonth;
+}
+
+unsigned int Date::hour() {
+    unsigned int randomHour = (rand() % 24);
+    return randomHour;
+}
+
+unsigned int Date::minutes() {
+    unsigned int randomMinute = rand() % 60;
+    return randomMinute;
+}
+
+unsigned int Date::seconds() {
+    unsigned int randomSecond = rand() % 60;
+    return randomSecond;
+}
+
+unsigned int Date::dayOfMonth() {
+    unsigned int randomDayOfMonth = (rand() % 30) + 1;
+    return randomDayOfMonth;
+}
+
+unsigned int Date::dayOfWeek() {
+    unsigned int randomDayOfWeek = (rand() % 7) + 1;
+    return randomDayOfWeek;
+}
+
+/*unsigned int Date::timezone() {
+
+}
+
+unsigned int Date::time() {
+    
+}
+*/
 
 }

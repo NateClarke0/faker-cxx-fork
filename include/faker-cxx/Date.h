@@ -154,5 +154,119 @@ public:
      * @endcode
      */
     static std::string monthAbbreviatedName();
+
+    static unsigned int year(int minYear = 1800, int maxYear = 2000);
+    /**
+     * @brief Returns a random year in the specified range
+     *
+     * @param minYear Minimum year for the generated year values Defaults to '1800'.
+     * @param maxYear Maximum year for the generated year values. Defaults to '2000'.
+     *
+     * @return Random year in specified range
+     *
+     * @code
+     * (requires inclusion of time.h)
+     * srand(time(NULL)) or srand(time(&timer))
+     * int yearRange = (rand() % (maxYear-minYear)) + 1
+     * return (unsigned int)(minYear + yearRange)
+     * @endcode
+     */
+    static unsigned int month();
+    /**
+     * @brief Returns a rondom month between 1 and 12
+     *
+     * @return Number from 1-12 representing the month
+     *
+     * @code
+     * (requires inclusion of time.h)
+     * unsigned int randomMonth = (rand() % 12) + 1
+     * return randomMonth
+     * @endcode
+     */
+    static unsigned int hour();
+    /**
+     * @brief Returns a random hour (between 0-23)
+     *
+     * @return Random hour
+     *
+     * @code
+     * (requires inclusion of time.h)
+     * unsigned int randomHour = (rand() % 24)
+     * return randomHour
+     * @endcode
+     */
+    static unsigned int minutes();
+    /**
+     * @brief Returns a random minute (between 0-59)
+     *
+     * @return Random minute
+     *
+     * @code
+     * (requires inclusion of time.h)
+     * unsigned int randomMinute = rand() % 60
+     * return randomMinute
+     * @endcode
+     */
+    static unsigned int seconds();
+    /**
+     * @brief Returns a random second (0-59)
+     *
+     * @return Random second
+     *
+     * @code
+     * (requires inclusion of time.h)
+     * unsigned int randomSecond = rand() % 60
+     * return randomSecond
+     * @endcode
+     */
+
+    static std::string time();
+    /**
+     * @brief Returns a random time (e.g: 10:30)
+     *
+     * @return Random time
+     *
+     * @code
+     * std::string time = ""
+     * time += (std::string)Date::hour() // "7"
+     * time += ":"
+     * time += (std::string)Date::minutes() // "23"
+     * return time
+     * @endcode
+     */
+    static unsigned int dayOfMonth();
+    /**
+     * @brief Returns a number between 1 and 31 representing the day of the month
+     *
+     * @return Number from 1-31
+     *
+     * @code
+     * (requires inclusion of time.h)
+     * unsigned int randomDayOfMonth = (rand() % 30) + 1
+     * return randomDayOfMonth
+     * @endcode
+     */
+    static unsigned int dayOfWeek();
+    /**
+     * @brief Returns a number from 1 to 7 representing a day of the week
+     *
+     * @return Number from 1-7
+     *
+     * @code
+     * (requires inclusion of time.h)
+     * unsigned int randomDayOfWeek = (rand() % 7) + 1
+     * return randomDayOfWeek
+     * @endcode
+     */
+    static std::string timezone();
+    /**
+     *  @brief Returns a random timezone
+     *
+     *  @return Timezone
+     *
+     *  @code
+     *
+     *  @endcode
+     */
 };
 }
