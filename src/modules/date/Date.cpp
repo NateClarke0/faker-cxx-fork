@@ -190,10 +190,19 @@ unsigned int Date::dayOfWeek() {
     return randomDayOfWeek;
 }
 
-/*unsigned int Date::timezone() {
-
+std::string Date::timezone() {
+    std::string time = "";
+    unsigned int timeHours = Date::hour();
+    std::string hourPart = std::to_string(timeHours);
+    time += hourPart;
+    time += ':';
+    unsigned int timeMinutes = Date::minutes();
+    std::string minutePart = std::to_string(timeMinutes);
+    time += minutePart;
+    return time;
 }
 
+/*
 unsigned int Date::time() {
     
 }
